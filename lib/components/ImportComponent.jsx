@@ -5,9 +5,9 @@ const react_1 = tslib_1.__importStar(require("react"));
 const adminjs_1 = require("adminjs");
 const design_system_1 = require("@adminjs/design-system");
 const ImportComponent = ({ resource }) => {
-    const [file, setFile] = react_1.useState(null);
-    const sendNotice = adminjs_1.useNotice();
-    const [isFetching, setFetching] = react_1.useState();
+    const [file, setFile] = (0, react_1.useState)(null);
+    const sendNotice = (0, adminjs_1.useNotice)();
+    const [isFetching, setFetching] = (0, react_1.useState)();
     const onUpload = (uploadedFile) => {
         var _a;
         setFile((_a = uploadedFile === null || uploadedFile === void 0 ? void 0 : uploadedFile[0]) !== null && _a !== void 0 ? _a : null);

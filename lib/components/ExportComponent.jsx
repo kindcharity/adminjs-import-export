@@ -13,10 +13,11 @@ exports.mimeTypes = {
     csv: 'text/csv',
     xml: 'text/xml',
 };
-exports.getExportedFileName = (extension) => `export-${format_1.default(Date.now(), 'yyyy-MM-dd_HH-mm')}.${extension}`;
+const getExportedFileName = (extension) => `export-${(0, format_1.default)(Date.now(), 'yyyy-MM-dd_HH-mm')}.${extension}`;
+exports.getExportedFileName = getExportedFileName;
 const ExportComponent = ({ resource }) => {
-    const [isFetching, setFetching] = react_1.useState();
-    const sendNotice = adminjs_1.useNotice();
+    const [isFetching, setFetching] = (0, react_1.useState)();
+    const sendNotice = (0, adminjs_1.useNotice)();
     const exportData = async (type) => {
         setFetching(true);
         try {
@@ -29,7 +30,7 @@ const ExportComponent = ({ resource }) => {
                 },
             });
             const blob = new Blob([exportedData], { type: exports.mimeTypes[type] });
-            file_saver_1.saveAs(blob, exports.getExportedFileName(type));
+            (0, file_saver_1.saveAs)(blob, (0, exports.getExportedFileName)(type));
             sendNotice({ message: 'Exported successfully', type: 'success' });
         }
         catch (e) {
