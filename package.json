@@ -5,6 +5,9 @@
   "types": "types/index.d.ts",
   "private": true,
   "repository": "git@github.com:kindcharity/adminjs-import-export.git",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "release": "semantic-release",
